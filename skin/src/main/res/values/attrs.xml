@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <attr name="support" format="boolean"/>
+    <declare-styleable name="PathView">
+        <attr name="path_color" format="reference"/>
+    </declare-styleable>
 </resources>

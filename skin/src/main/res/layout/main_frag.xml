@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    skin:support="true"
+    skin:support="false"
     android:background="@color/colorPrimaryDark">
 
     <Button
@@ -16,4 +16,13 @@
         skin:support="true"
         android:textAllCaps="false"
         android:text="change"/>
+
+    <Button
+        android:id="@+id/btn_recycler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        skin:support="true"
+        android:textAllCaps="false"
+        android:text="recycler"/>
 </LinearLayout>

@@ -10,5 +10,6 @@ class SkinConfig {
     companion object {
         const val TEXT_COLOR = "textColor"
         const val BACKGROUND = "background"
+        const val PATH_COLOR = "path_color"
     }
 }

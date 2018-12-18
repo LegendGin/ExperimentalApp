@@ -31,4 +31,6 @@ object ResourceLoader {
         mResources = Resources(assetManager,superRes?.displayMetrics, superRes?.configuration)
         return mResources
     }
+
+    fun getContext() = mContext
 }

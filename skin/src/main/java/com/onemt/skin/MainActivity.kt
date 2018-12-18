@@ -13,7 +13,19 @@ class MainActivity: BaseSkinActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
-
     }
 
+    override fun onPause() {
+        super.onPause()
+        SkinManager.getSize()
+    }
+
+    override fun onStop() {
+        super.onStop()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        SkinManager.getSize()
+    }
 }

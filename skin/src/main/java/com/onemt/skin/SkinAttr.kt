@@ -29,5 +29,12 @@ class SkinAttr(var attrName: String,
         return result
     }
 
-    fun getResId(res: Resources) = res.getIdentifier(resName, resType,"com.onemt.skinred")
+    fun getResId(res: Resources, packageName: String): Int {
+        return try {
+            res.getIdentifier(resName, resType,packageName)
+        } catch (e: Resources.NotFoundException) {
+            e.printStackTrace()
+            0
+        }
+    }
 }

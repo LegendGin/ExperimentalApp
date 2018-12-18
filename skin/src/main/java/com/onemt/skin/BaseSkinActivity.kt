@@ -1,14 +1,7 @@
 package com.onemt.skin
 
-import android.content.Context
 import android.os.Bundle
-import android.util.ArrayMap
-import android.util.AttributeSet
-import android.util.SparseArray
-import android.view.LayoutInflater
-import android.view.View
 import com.onemt.base.BaseActivity
-import org.jetbrains.anko.info
 
 /**
  * @author: chenjinghang
@@ -17,8 +10,6 @@ import org.jetbrains.anko.info
  * @see
  */
 open class BaseSkinActivity: BaseActivity() {
-
-    private val skinAttrs = ArrayMap<String, String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         SkinManager.register(this)
