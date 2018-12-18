@@ -9,10 +9,12 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/base" />
             <option value="$PROJECT_DIR$/gradletech" />
             <option value="$PROJECT_DIR$/multiThread" />
             <option value="$PROJECT_DIR$/screenadapter" />
             <option value="$PROJECT_DIR$/skin" />
+            <option value="$PROJECT_DIR$/skinred" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

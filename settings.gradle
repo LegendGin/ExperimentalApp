@@ -1,1 +1,1 @@
-include ':app', ':skin', ':multiThread', ':gradletech', ':screenadapter'
+include ':app', ':skin', ':multiThread', ':gradletech', ':screenadapter', ':base', ':skinred'

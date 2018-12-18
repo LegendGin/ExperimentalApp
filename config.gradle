@@ -1,0 +1,117 @@
+ext {
+    //dev variant下开启下面的开关可以独立运行一个module
+    //组件单独调试开关，需要点击 "Sync Project"，开启isDev的话isBaseDev必须关闭
+    isDev = false
+    //base模块调试开关
+    isBaseDev = false
+
+    android = ext {
+        compile_sdk_version = 28
+        build_tools_version = '28.0.3'
+        min_sdk_version = 19
+        target_sdk_version = 26
+    }
+
+    onemt_dependencies = ext {
+        onemt_data_report = 'com.onemt.bussiness.framework:datareport:1.0.0-SNAPSHOT'
+        onemt_core = 'com.onemt.bussiness.framework:core:1.4.6-SNAPSHOT'
+        onemt_base = 'com.onemt.bussiness.framework:base:1.1.12-SNAPSHOT'
+        onemt_alive = 'com.onemt.bussiness.framework:alive:1.1.1'
+        onemt_permission = 'com.onemt.app.framework:runtime-permission:1.0.3-SNAPSHOT'
+        USER = "com.onemt.bussiness.framework:user:1.0.7-SNAPSHOT"
+    }
+
+    dependencies = ext {
+        //kotlin
+        kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+        //test
+        junit = 'junit:junit:4.12'
+        runner = 'com.android.support.test:runner:1.0.2'
+        espresso = 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+        //support
+        appcompat_v7 = 'com.android.support:appcompat-v7:28.0.0'
+        recyclerview_v7 = 'com.android.support:recyclerview-v7:28.0.0'
+        cardview = 'com.android.support:cardview-v7:28.0.0'
+        constraint = 'com.android.support.constraint:constraint-layout:1.1.3'
+        support_vector_drawable = 'com.android.support:support-vector-drawable:28.0.0'
+        design = 'com.android.support:design:28.0.0'
+        multidex = 'com.android.support:multidex:1.0.2'
+
+        //http
+        retrofit = 'com.squareup.retrofit2:retrofit:2.4.0'
+        okhttp = 'com.squareup.okhttp3:okhttp:3.11.0'
+
+        //rx
+        rxjava = 'io.reactivex.rxjava2:rxjava:2.2.2'
+        rxrelay = 'com.jakewharton.rxrelay2:rxrelay:2.1.0'
+        rxandroid = 'io.reactivex.rxjava2:rxandroid:2.1.0'
+        converter_gson = 'com.squareup.retrofit2:converter-gson:2.4.0'
+        rxjava_adapter = 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+        rxlifecycle = 'com.trello.rxlifecycle2:rxlifecycle:2.2.2'
+        rxlifecycle_components = 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.2'
+
+        //glide
+        glide = 'com.github.bumptech.glide:glide:4.8.0'
+        glide_compiler = 'com.github.bumptech.glide:compiler:4.8.0'
+
+        //gson
+        gson = 'com.google.code.gson:gson:2.8.5'
+
+        //calligraphy
+        calligraphy = 'uk.co.chrisjenx:calligraphy:2.3.0'
+
+        //leakcanary
+        leakcanary = 'com.squareup.leakcanary:leakcanary-android:1.6.2'
+        leakcanary_no_op = 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.2'
+
+        //stetho
+        stetho = 'com.facebook.stetho:stetho:1.5.0'
+        stetho_okhttp3 = 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+
+        //arouter
+        arouter = 'com.alibaba:arouter-api:1.4.0'
+        arouter_compiler = 'com.alibaba:arouter-compiler:1.2.1'
+
+        //anko
+        anko_version = '0.10.7'
+        anko_commons = "org.jetbrains.anko:anko-commons:$anko_version"
+        anko_sdk = "org.jetbrains.anko:anko-sdk25:$anko_version"
+        anko_appcompat_v7 = "org.jetbrains.anko:anko-appcompat-v7-commons:$anko_version"
+        anko_design = "org.jetbrains.anko:anko-design:$anko_version"
+        anko_support_v4 = "org.jetbrains.anko:anko-support-v4-commons:$anko_version"
+
+        //lottie
+        lottie = 'com.airbnb.android:lottie:2.7.0'
+
+        greendao = 'org.greenrobot:greendao:3.2.2'
+        greendao_plugin = 'org.greenrobot:greendao-gradle-plugin:3.2.2'
+    }
+
+    ui = ext {
+        smarttablayout = 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
+        baseRecyclerViewAdapterHelper = 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.42'
+        matisse = 'com.zhihu.android:matisse:0.5.1'
+    }
+
+    sdk = ext {
+        // 云信
+        nim_basesdk = 'com.netease.nimlib:basesdk:5.7.0'
+        nim_chatroom = 'com.netease.nimlib:chatroom:5.7.0'
+        nim_lucene = 'com.netease.nimlib:lucene:5.7.0'
+        nim_push = 'com.netease.nimlib:push:5.7.0'
+
+        //kochava
+        kochava = 'com.kochava.base:tracker:3.4.2'
+
+        //billing
+        billing = 'com.android.billingclient:billing:1.2'
+    }
+
+    push = ext {
+        firebase_messaging = 'com.google.firebase:firebase-messaging:11.6.0'
+        play_services_base = 'com.google.android.gms:play-services-base:11.6.0'
+        firebase_core = 'com.google.firebase:firebase-core:11.6.0'
+    }
+}

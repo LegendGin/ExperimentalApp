@@ -1,21 +1,17 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
 
 
 
     defaultConfig {
-        minSdkVersion min_sdk_version
-        targetSdkVersion target_sdk_version
+        minSdkVersion 16
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
-        applicationId 'com.onemt.skin'
-//        multiDexEnabled true
 
     }
 
@@ -30,9 +26,12 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':base')
+    api appcompat_v7
     testImplementation 'junit:junit:4.12'
-}
-repositories {
-    mavenCentral()
+    api anko_commons
+    api anko_sdk
+    api anko_appcompat_v7
+    api anko_design
+    api anko_support_v4
+    api kotlin_stdlib
 }
