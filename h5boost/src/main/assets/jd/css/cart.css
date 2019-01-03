@@ -1,0 +1,259 @@
+body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#header > .topbar {
+  background: url("../images/header-bg.png") repeat-x;
+  -webkit-background-size: 1px 44px;
+  background-size: 1px 44px;
+  height: 45px;
+  padding: 0 45px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+#header > .topbar > .back,
+#header > .topbar .categories {
+  position: absolute;
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 12px 13px;
+  width: 19px;
+  height: 21px;
+  background: url("../images/jd-sprites.png") no-repeat;
+  background-position: -24px 0px;
+  -webkit-background-size: 200px 200px;
+  background-size: 200px 200px;
+  background-origin: content-box;
+  background-clip: content-box;
+}
+#header > .topbar > .back {
+  left: 0;
+  top: 0;
+}
+#header > .topbar > p {
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  font-size: 17px;
+}
+#header > .topbar > .categories {
+  top: 0;
+  right: 0;
+  background-position: -61px 0px;
+}
+#main {
+  padding-top: 45px;
+}
+#main > .safe {
+  height: 40px;
+  line-height: 40px;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 14px;
+}
+#main > .safe > p {
+  position: relative;
+  color: #686868;
+}
+#main > .safe > p::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  margin-left: -25px;
+  background-image: url(../images/safe_icon.png);
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+}
+#main > #goods {
+  margin-top: 20px;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+#main > #goods > .title > .title-left {
+  margin-top: 10px;
+}
+#main > #goods > .title > .title-left > i {
+  display: inline-block;
+}
+#main > #goods > .title > .title-left > .jd-mall-logo {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background: url("../images/buy-logo.png") no-repeat;
+  background-size: contain;
+}
+#main > #goods > .title > .title-left > span {
+  vertical-align: top;
+}
+#main > #goods > .title > .title-right {
+  padding-top: 10px;
+  padding-right: 5px;
+  color: #d8505c;
+}
+#main > #goods > .goods-list > .goods-item {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 10px;
+}
+#main > #goods > .goods-list > .goods-item > .content {
+  padding-bottom: 10px;
+}
+#main > #goods > .goods-list > .goods-item > .content > .thumbnail {
+  display: inline-block;
+  height: 80px;
+  width: 80px;
+  margin-right: 10px;
+}
+#main > #goods > .goods-list > .goods-item > .content > .thumbnail > img {
+  width: 100%;
+}
+#main > #goods > .goods-list > .goods-item > .content > .title {
+  display: block;
+  height: 3em;
+}
+#main > #goods > .goods-list > .goods-item > .content > .title > h4 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+}
+#main > #goods > .goods-list > .goods-item > .content > .bottom {
+  padding-top: 5px;
+  height: 24px;
+}
+#main > #goods > .goods-list > .goods-item > .content > .bottom > .count {
+  font-size: 0;
+}
+#main > #goods > .goods-list > .goods-item > .content > .bottom > .count > span {
+  font-size: 12px;
+}
+#main > #goods > .goods-list > .goods-item > .content > .bottom > .count > .input-count {
+  text-align: center;
+  font-size: 12px;
+  width: 32px;
+  height: 24px;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+#main > #goods > .goods-list > .goods-item > .content > .bottom > .delete {
+  margin-right: 20px;
+}
+#main > #goods > .goods-list > .goods-item > .content > .bottom > .delete > .jd-icon-trash {
+  position: relative;
+}
+#main > #goods > .goods-list > .goods-item > .content > .bottom > .delete > .jd-icon-trash::before,
+#main > #goods > .goods-list > .goods-item > .content > .bottom > .delete > .jd-icon-trash::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  left: 0;
+}
+#main > #goods > .goods-list > .goods-item > .content > .bottom > .delete > .jd-icon-trash::before {
+  width: 24px;
+  background-image: url("../images/delete_up.png");
+}
+#main > #goods > .goods-list > .goods-item > .content > .bottom > .delete > .jd-icon-trash::after {
+  background-image: url("../images/delete_down.png");
+}
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 57px;
+}
+#footer > .left {
+  width: 66.66%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+#footer > .left > .select-all {
+  float: left;
+  width: 33.33%;
+  color: white;
+  overflow: hidden;
+  padding: 10px;
+}
+#footer > .left > .select-all > * {
+  margin-top: 10px;
+  float: left;
+}
+#footer > .left > .total {
+  padding-top: 11px;
+  float: left;
+  color: white;
+}
+#footer > .pay {
+  width: 33.33%;
+  height: 100%;
+  line-height: 57px;
+  background-color: #f15353;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+}
+.dialog {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  z-index: 1001;
+}
+.dialog > .box {
+  margin: 10px auto;
+  width: 300px;
+  height: 200px;
+  background-color: #fff;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 0 20px;
+}
+.dialog > .box > .content {
+  height: 65%;
+  line-height: 650%;
+  font-size: 18px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.dialog > .box > .bottom {
+  margin-top: 10px;
+  font-size: 15px;
+}
+.dialog > .box > .bottom .cancel {
+  float: left;
+  display: block;
+  text-align: center;
+  width: 40%;
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+}
+.dialog > .box > .bottom .submit {
+  float: right;
+  display: block;
+  width: 40%;
+  height: 40px;
+  line-height: 40px;
+  color: #ffffff;
+  background-color: #d8505c;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+}

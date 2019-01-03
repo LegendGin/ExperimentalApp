@@ -7,7 +7,7 @@ import java.util.concurrent.*;
  */
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        Executor executor = new ThreadPoolExecutor(5, 8, 3, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(3), new RejectedExecutionHandler() {
+        Executor executor = new ThreadPoolExecutor(1, 8, 3, TimeUnit.SECONDS, new SynchronousQueue<Runnable>(), new RejectedExecutionHandler() {
             @Override
             public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
                 Task task = (Task) r;

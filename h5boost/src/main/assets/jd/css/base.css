@@ -1,0 +1,106 @@
+*,
+::before,
+::after{
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-box-sizing: border-box;
+}
+
+body{
+    font-size: 12px;
+    color: #000000;
+    font-family:"microsoft Yahei", sans-serif;
+}
+
+input, textarea{
+    border: 0;
+    resize: none;
+    outline: none;
+    -webkit-appearance: none;
+}
+a,
+a:hover{
+    text-decoration: none;
+    color: black;
+}
+ul,ol{
+    list-style: none;
+    /* overflow: hidden; */
+}
+img{
+    vertical-align: top;
+}
+/*版心*/
+.container {
+    min-width: 300px;
+    max-width: 640px;
+    margin:0 auto;
+}
+/*清除浮动*/
+.clearfix::before,
+.clearfix::after{
+    content: '';
+    display: table;
+    visibility: hidden;
+}
+.clearfix::after{
+    clear: both;
+}
+
+[class^="jd-sprite-"]{
+    background: url("../images/jd-sprites.png") no-repeat;
+    -webkit-background-size:200px 200px;
+    background-size:200px 200px;
+    display: inline-block;
+    left: 0;
+    top: 0;
+}
+
+[class^="jd-icon-"],
+[class*=" jd-icon-"]{
+    width: 16px;
+    height: 20px;
+    display: inline-block;
+    -webkit-background-size:16px 20px;
+    background-size:16px 20px;
+}
+.checkbox{
+    padding: 8px;
+}
+.jd-checkbox{
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url("../images/shop-icon.png") no-repeat left top;
+    background-size: 50px 100px;
+}
+.jd-checkbox[checked]{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("../images/shop-icon.png") no-repeat -25px top;
+    background-size: 50px 100px;
+}
+.button-minus,
+.button-plus{
+    display: inline-block;
+    width: 32px;
+    height: 24px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    padding-top: 3px;
+}
+.button-minus{
+    border-radius: 5px 0 0 5px;
+}
+.button-plus{
+    border-radius: 0px 5px 5px 0px;
+}
+.pull-left{
+    float: left;
+}
+
+.pull-right{
+    float: right;
+}

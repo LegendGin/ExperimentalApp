@@ -1,0 +1,27 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.onemt.h5boost" >
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:name=".H5Application"
+        android:theme="@style/Theme.AppCompat"
+        android:label="h5boost">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".BrowserActivity"/>
+        <activity android:name=".Browser2Activity"/>
+        <activity android:name=".NormalActivity"/>
+        <activity android:name=".NormalActivityWithDestroy"/>
+        <activity android:name=".GlobalActivity"/>
+        <activity android:name=".ParallelActivity"/>
+        <activity android:name=".Parallel2Activity"/>
+        <activity android:name=".LocalActivity"/>
+        <activity android:name=".TemplateActivity"/>
+    </application>
+</manifest>

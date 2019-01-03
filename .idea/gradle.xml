@@ -8,13 +8,18 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/adid" />
+            <option value="$PROJECT_DIR$/annotation" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/base" />
             <option value="$PROJECT_DIR$/gradletech" />
+            <option value="$PROJECT_DIR$/h5boost" />
             <option value="$PROJECT_DIR$/multiThread" />
             <option value="$PROJECT_DIR$/screenadapter" />
             <option value="$PROJECT_DIR$/skin" />
             <option value="$PROJECT_DIR$/skinred" />
+            <option value="$PROJECT_DIR$/testGeneric" />
+            <option value="$PROJECT_DIR$/testParameter" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

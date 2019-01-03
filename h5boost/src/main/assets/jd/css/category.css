@@ -1,0 +1,112 @@
+body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#header > .topbar {
+  background: url("../images/header-bg.png") repeat-x;
+  -webkit-background-size: 1px 44px;
+  background-size: 1px 44px;
+  height: 45px;
+  padding: 0 45px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+#header > .topbar > .back,
+#header > .topbar .categories {
+  position: absolute;
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 12px 13px;
+  width: 19px;
+  height: 21px;
+  background: url("../images/jd-sprites.png") no-repeat;
+  background-position: -24px 0px;
+  -webkit-background-size: 200px 200px;
+  background-size: 200px 200px;
+  background-origin: content-box;
+  background-clip: content-box;
+}
+#header > .topbar > .back {
+  left: 0;
+  top: 0;
+}
+#header > .topbar .search {
+  width: 100%;
+  height: 32px;
+  margin: 6px 0;
+  padding: 0 5px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+}
+#header > .topbar > .categories {
+  top: 0;
+  right: 0;
+  background-position: -61px 0px;
+}
+#main {
+  z-index: 999;
+  padding-top: 45px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+#main > .categories {
+  height: 100%;
+  width: 76px;
+  position: absolute;
+  overflow: hidden;
+  background-color: #fff;
+}
+#main > .categories > ul {
+  border: 1px solid #e0e0e0;
+}
+#main > .categories > ul > li {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+#main > .categories > ul > li + li {
+  border-top: 1px solid #e0e0e0;
+}
+#main > .details {
+  height: 100%;
+  width: 100%;
+  padding-left: 76px;
+  background-color: #f3f5f7;
+}
+#main > .details > .topBanner {
+  padding: 20px;
+  text-align: center;
+}
+#main > .details > .topBanner > img {
+  display: inline;
+  width: 100%;
+}
+#main > .details > .hotCategory {
+  padding: 0 20px;
+}
+#main > .details > .hotCategory > h3 {
+  font-size: 18px;
+  padding-bottom: 20px;
+}
+#main > .details > .hotCategory > ul {
+  background-color: #fff;
+}
+#main > .details > .hotCategory > ul > li {
+  float: left;
+  padding: 10px 10px;
+  width: 33.33%;
+}
+#main > .details > .hotCategory > ul > li > a {
+  text-align: center;
+}
+#main > .details > .hotCategory > ul > li > a > img {
+  width: 100%;
+  margin-bottom: 5px;
+}

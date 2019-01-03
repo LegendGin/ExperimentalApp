@@ -1,1 +1,1 @@
-include ':app', ':skin', ':multiThread', ':gradletech', ':screenadapter', ':base', ':skinred'
+include ':app', ':skin', ':multiThread', ':gradletech', ':screenadapter', ':base', ':skinred', ':annotation', ':h5boost', ':adid', ':testParameter', ':testGeneric'

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/et_url"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="http://www.baidu.com"/>
+
+    <Button
+        android:id="@+id/init"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="初始化"/>
+
+    <Button
+        android:id="@+id/normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="普通方式(不调用destroy)"/>
+
+    <Button
+        android:id="@+id/normalWithDestroy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="普通方式(调用destroy)"/>
+
+    <Button
+        android:id="@+id/global"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="全局WebView"/>
+
+    <Button
+        android:id="@+id/preload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="预加载"/>
+
+    <Button
+        android:id="@+id/local"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="从本地缓存加载"/>
+
+    <Button
+        android:id="@+id/parallel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="并行加载"/>
+
+    <Button
+        android:id="@+id/parallel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="并行加载（分段）"/>
+
+    <Button
+        android:id="@+id/template"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="模板"/>
+
+</LinearLayout>

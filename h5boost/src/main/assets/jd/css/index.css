@@ -1,0 +1,221 @@
+body {
+  background-color: #f5f5f5;
+}
+/*header*/
+#header > .search-bar {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+#header > .search-bar > .container {
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 75px;
+  padding-right: 45px;
+}
+#header > .search-bar > .container > .jd-search-logo {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -10px;
+  margin-left: 10px;
+  line-height: 20px;
+}
+#header > .search-bar > .container > .jd-search-logo > .jd-sprite-search-logo {
+  width: 56px;
+  height: 21px;
+  background-position: left -109px;
+}
+#header > .search-bar > .container > form {
+  position: relative;
+}
+#header > .search-bar > .container > form > .input-search {
+  width: 100%;
+  height: 30px;
+  border-radius: 15px;
+  padding-left: 35px;
+  padding-right: 5px;
+  padding-top: 2px;
+}
+#header > .search-bar > .container > form > .jd-sprite-input-icon {
+  position: absolute;
+  width: 21px;
+  height: 21px;
+  left: 10px;
+  top: 50%;
+  margin-top: -10px;
+  background-position: -60px -109px;
+}
+#header > .search-bar > .container > .login {
+  position: absolute;
+  color: white;
+  margin-right: 10px;
+  right: 0;
+  top: 0;
+}
+#header > .container > .slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+#header > .container > .slider > .slider-wrapper {
+  width: 1000%;
+  transform: translateX(-10%);
+  overflow: hidden;
+}
+#header > .container > .slider > .slider-wrapper > .slider-item {
+  width: 10%;
+}
+#header > .container > .slider > .slider-wrapper > .slider-item img {
+  width: 100%;
+}
+#header > .container > .slider > .indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -40px;
+}
+#header > .container > .slider > .indicators > .indicators-item {
+  float: left;
+  width: 10px;
+  height: 10px;
+  border: 2px solid white;
+  border-radius: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+#header > .container > .nav {
+  background-color: white;
+  padding: 10px 0;
+  box-shadow: 1px 1px 5px #aaa;
+}
+#header > .container > .nav > .nav-wrapper > .nav-item {
+  margin: 5px 0;
+  float: left;
+  width: 25%;
+  text-align: center;
+}
+#header > .container > .nav > .nav-wrapper > .nav-item img {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
+/*header*/
+/*main*/
+#main > .container {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+#main > .container > #secKill {
+  box-shadow: 1px 1px 5px #e0e0e0;
+  background-color: white;
+}
+#main > .container > #secKill > .top {
+  height: 32px;
+  line-height: 32px;
+}
+#main > .container > #secKill > .top > .jd-icon-seckill {
+  margin-left: 8px;
+  margin-top: 6px;
+  background-image: url(../images/seckill-icon.png);
+  background-repeat: no-repeat;
+}
+#main > .container > #secKill > .top > span {
+  padding-left: 10px;
+  color: #d8505c;
+  font-size: 15px;
+}
+#main > .container > #secKill > .top > .count-down {
+  display: inline;
+  padding-left: 5px;
+  font-size: 14px;
+}
+#main > .container > #secKill > .top > .count-down > .number {
+  padding: 0 2px;
+  background-color: #000;
+  color: #fff;
+}
+#main > .container > #secKill > .top > .more > a {
+  display: inline-block;
+  font-size: 15px;
+  padding-right: 5px;
+}
+#main > .container > #secKill > .products {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+#main > .container > #secKill > .products > li {
+  width: 33.33%;
+}
+#main > .container > #secKill > .products > li img {
+  width: 80%;
+  margin: 0 auto;
+}
+#main > .container > #secKill > .products > li p:first-of-type {
+  color: #d8505c;
+}
+#main > .container > #secKill > .products > li p:last-of-type {
+  text-decoration: line-through;
+}
+#main > .container > #secKill > .products > li + li div {
+  border-left: 1px solid #e0e0e0;
+}
+#main > .container > #cheapBuy,
+#main > .container #events {
+  margin-top: 10px;
+  padding-top: 5px;
+  box-shadow: 1px 1px 5px #e0e0e0;
+  background-color: white;
+}
+#main > .container > #cheapBuy > .title,
+#main > .container #events > .title {
+  border-bottom: 1px solid #e0e0e0;
+}
+#main > .container > #cheapBuy > .title > h3,
+#main > .container #events > .title > h3 {
+  font-weight: normal;
+  position: relative;
+  padding-left: 10px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+#main > .container > #cheapBuy > .title > h3::before,
+#main > .container #events > .title > h3::before {
+  content: '';
+  display: block;
+  height: 1em;
+  border: 3px solid #d8505c;
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+#main > .container > #cheapBuy > .content > a {
+  width: 50%;
+}
+#main > .container > #cheapBuy > .content > a > img {
+  width: 100%;
+}
+#main > .container > #cheapBuy > .content > a:first-of-type {
+  border-right: 1px solid #e0e0e0;
+}
+#main > .container > #cheapBuy > .content > a:nth-of-type(2) {
+  border-bottom: 1px solid #e0e0e0;
+}
+#main > .container > #events > .content > a {
+  width: 50%;
+}
+#main > .container > #events > .content > a > img {
+  width: 100%;
+}
+#main > .container > #events > .content > a:first-of-type {
+  border-left: 1px solid #e0e0e0;
+  padding-top: 1px;
+}
+#main > .container > #events > .content > a:nth-of-type(2) {
+  border-bottom: 1px solid #e0e0e0;
+}
+/*main*/
