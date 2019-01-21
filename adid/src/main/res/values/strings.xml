@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">adid</string>
+    <string name="device_status_activity_title">Status</string>
+    <string name="sim_status_title">SIM status</string>
+    <string name="imei_information_title">IMEI information</string>
+    <string name="device_info_not_available">Not available</string>
+    <string name="battery_status_title">Battery status</string>
+    <string name="battery_level_title">Battery level</string>
+    <string name="wifi_advanced_ip_address_title">IP address</string>
+    <string name="status_wifi_mac_address">Wi\u2011Fi MAC address</string>
+    <string name="status_bt_address">Bluetooth address</string>
+    <string name="status_serial_number">Serial number</string>
+    <string name="status_up_time">Up time</string>
+    <string name="status_wimax_mac_address">4G MAC address</string>
 </resources>

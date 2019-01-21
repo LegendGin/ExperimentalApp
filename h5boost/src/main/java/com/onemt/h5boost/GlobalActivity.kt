@@ -92,6 +92,7 @@ class GlobalActivity: BaseH5Activity() {
     }
 
     override fun onDestroy() {
+
         super.onDestroy()
         fl_web.removeView(webView2)
         webView2.clearCache(true)

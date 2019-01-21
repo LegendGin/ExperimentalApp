@@ -7,7 +7,7 @@
         android:id="@+id/et_url"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="http://www.baidu.com"/>
+        android:text="https://apicosdkdebug.onemt.co?gameid=100006001&amp;action=social&amp;version=1.0.0_0919_2"/>
 
     <Button
         android:id="@+id/init"

@@ -73,7 +73,7 @@ class TemplateActivity: BaseH5Activity() {
                 return super.shouldInterceptRequest(view, url)
             }
         }
-        WebviewHelper.setUp(webView2, JsInterface(start, tv_time))
+        WebviewHelper.setUp(webView2, jsInterface)
 
         load()
     }
@@ -95,5 +95,6 @@ class TemplateActivity: BaseH5Activity() {
     override fun onDestroy() {
         super.onDestroy()
         webView2.clearCache(true)
+        webView2.destroy()
     }
 }

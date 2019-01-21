@@ -3,7 +3,7 @@
  * Created by Gin on 2017/1/17.
  */
 document.onreadystatechange = function () {
-    if (document.readyState == "complete") {
+    if (document.readyState == "interactive") {
         window.sonic.ready();
     }
 }

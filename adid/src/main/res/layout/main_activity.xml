@@ -5,14 +5,33 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/btn_adid"
+        android:id="@+id/btn_go"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="adid"/>
+        android:text="go"/>
 
-    <TextView
-        android:id="@+id/tv_adid"
+    <Button
+        android:id="@+id/btn_adid_async"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="adid异步"/>
+
+    <Button
+        android:id="@+id/btn_adid_sync"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="adid同步"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <TextView
+            android:id="@+id/tv_adid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </android.support.v4.widget.NestedScrollView>
 
 </LinearLayout>

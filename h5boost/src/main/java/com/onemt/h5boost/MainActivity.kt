@@ -3,6 +3,7 @@ package com.onemt.h5boost
 import android.content.Intent
 import android.os.Bundle
 import android.os.Process
+import android.provider.Settings
 import android.support.v7.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
@@ -59,8 +60,8 @@ class MainActivity: AppCompatActivity() {
         }
         preload.setOnClickListener {
             WebViewPool.init(this)
-            val session = H5Engine.createSession(url)
-            H5Engine.preload(session)
+//            val session = H5Engine.createSession(url)
+//            H5Engine.preload(session)
         }
         local.setOnClickListener {
             startActivity(Intent(this, LocalActivity::class.java))
@@ -89,6 +90,11 @@ class MainActivity: AppCompatActivity() {
                 }
             })
         }
+        Toast.makeText(this, getAndroidId(), Toast.LENGTH_LONG).show()
+    }
+
+    private fun getAndroidId(): String {
+        return Settings.Secure.getString(contentResolver, Settings.Secure.ANDROID_ID)
     }
 
     override fun onBackPressed() {
