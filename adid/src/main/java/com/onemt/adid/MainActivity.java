@@ -1,16 +1,15 @@
 package com.onemt.adid;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
+import android.Manifest;
+import android.content.*;
 import android.content.pm.PackageManager;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
-import android.os.Build;
-import android.os.Bundle;
+import android.os.*;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
@@ -21,10 +20,8 @@ import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.lang.Process;
 import java.lang.reflect.Method;
 import java.net.NetworkInterface;
 import java.util.Calendar;
@@ -43,7 +40,9 @@ import java.util.concurrent.locks.ReentrantLock;
 public class MainActivity extends AppCompatActivity {
 
     private TextView tv_adid;
-    String adid = null;
+    volatile String adid = null;
+    private static final int WAIT = 1001;
+    private static final int NOTIFY = 1002;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -56,57 +55,58 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(android.provider.Settings.ACTION_WIFI_SETTINGS));
             }
         });
+        findViewById(R.id.btn_adid_jni).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*File root = Environment.getExternalStorageDirectory();
+                File dir = new File(root.getAbsolutePath() + File.separator + "adid");
+                if (!dir.exists()) {
+                    dir.mkdirs();
+                }
+                File file = new File(dir.getAbsolutePath() + File.separator + "a.txt");
+                if (!file.exists()) {
+                    try {
+                        file.createNewFile();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }*/
+                tv_adid.append("android id:" + new JNIUtil().getAndroidId(MainActivity.this) + "\n");
+            }
+        });
         findViewById(R.id.btn_adid_sync).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AdidTask t = new AdidTask();
-//                Executors.newSingleThreadExecutor().submit(t);
-                Thread thread = new Thread(new Runnable() {
+                boolean result = bindService(new Intent(MainActivity.this, TestService.class), new ServiceConnection() {
                     @Override
-                    public void run() {
-                        /*try {
-                            AdvertisingIdClient.Info info = AdvertisingIdClient.getAdvertisingIdInfo(MainActivity.this);
-                            adid = info.getId();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        } catch (GooglePlayServicesNotAvailableException e) {
-                            e.printStackTrace();
-                        } catch (GooglePlayServicesRepairableException e) {
-                            e.printStackTrace();
-                        }*/
-                        try {
-                            final AdvertisingIdClient.Info info = AdClient.getAdvertisingIdInfo(MainActivity.this);
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    tv_adid.append("playid custom:" + info.getId() + "\n");
-                                }
-                            });
-                            Log.e("info", info.getId());
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        } catch (GooglePlayServicesNotAvailableException e) {
-                            e.printStackTrace();
-                        } catch (GooglePlayServicesRepairableException e) {
-                            e.printStackTrace();
-                        }
+                    public void onServiceConnected(ComponentName name, IBinder service) {
+                        adid = "123";
+                        handler.sendEmptyMessage(NOTIFY);
                     }
-                });
-                thread.start();
-//                    thread.join();
-//                tv_adid.append(adid);
-                /*try {
-                    Thread.sleep(500);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+
+                    @Override
+                    public void onServiceDisconnected(ComponentName name) {
+
+                    }
+                }, Context.BIND_AUTO_CREATE);
+                while (TextUtils.isEmpty(adid)) {
+                    handler.sendEmptyMessage(WAIT);
+                    try {
+                        Thread.sleep(50);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
-                tv_adid.append("cost:" + (System.currentTimeMillis() - start));*/
+                tv_adid.append("adid sync:" + adid);
+                tv_adid.append("\n");
             }
         });
         findViewById(R.id.btn_adid_async).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 tv_adid.append("serial:" + getSerialId());
+                tv_adid.append("\n");
+                tv_adid.append("imei:" + getMeid());
                 tv_adid.append("\n");
                 tv_adid.append("android_id:" + getAndroidId());
                 tv_adid.append("\n");
@@ -128,6 +128,17 @@ public class MainActivity extends AppCompatActivity {
         });
 //        getAdid();
     }
+
+    private static Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            /*switch (msg.what) {
+                case MainActivity.WAIT:
+                    break;
+            }*/
+        }
+    };
 
     private class AdidTask implements Callable<String> {
 
@@ -178,21 +189,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void getAdid() {
         final long start = System.currentTimeMillis();
-        /*Executors.newSingleThreadExecutor().execute(new Runnable() {
-            @Override
-            public void run() {
-                final String adid = getPlayAdId(MainActivity.this);
-                tv_adid.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        long cost = System.currentTimeMillis() - start;
-                        tv_adid.append("playid reflect:" + adid + "\n");
-                        tv_adid.append("cost:" + cost);
-                        tv_adid.append("\n");
-                    }
-                });
-            }
-        });*/
         Executors.newSingleThreadExecutor().execute(new Runnable() {
             @Override
             public void run() {
@@ -224,6 +220,16 @@ public class MainActivity extends AppCompatActivity {
 
     private String getMeid() {
         TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return "";
+        }
         return telephonyManager.getImei();
     }
 
@@ -234,7 +240,17 @@ public class MainActivity extends AppCompatActivity {
             Method get = c.getMethod("get", String.class, String.class);
 
             String serialnum = (String) (get.invoke(c, "ro.serialno", "unknown"));
-            return serialnum + " | " + Build.SERIAL;
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return "";
+            }
+            return serialnum + " | " + Build.getSerial();
         } catch (Exception e) {
             e.printStackTrace();
         }

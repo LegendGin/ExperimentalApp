@@ -149,7 +149,7 @@ public class AdClient {
     }
 
     public AdvertisingIdClient.Info getInfo() throws IOException {
-        Preconditions.checkNotMainThread("Calling this from your main thread can lead to deadlock");
+//        Preconditions.checkNotMainThread("Calling this from your main thread can lead to deadlock");
         AdvertisingIdClient.Info var1;
         synchronized(this) {
             if (!this.zzg) {
@@ -203,7 +203,7 @@ public class AdClient {
     }
 
     private final void zza(boolean z) throws IOException, IllegalStateException, GooglePlayServicesNotAvailableException, GooglePlayServicesRepairableException {
-        Preconditions.checkNotMainThread("Calling this from your main thread can lead to deadlock");
+//        Preconditions.checkNotMainThread("Calling this from your main thread can lead to deadlock");
         synchronized (this) {
             if (this.zzg) {
                 finish();
@@ -239,7 +239,7 @@ public class AdClient {
     }
 
     private void finish() {
-        Preconditions.checkNotMainThread("Calling this from your main thread can lead to deadlock");
+//        Preconditions.checkNotMainThread("Calling this from your main thread can lead to deadlock");
         synchronized(this) {
             if (this.mContext != null && this.serviceConnection != null) {
                 try {

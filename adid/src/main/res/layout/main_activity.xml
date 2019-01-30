@@ -22,6 +22,12 @@
         android:layout_height="wrap_content"
         android:text="adid同步"/>
 
+    <Button
+        android:id="@+id/btn_adid_jni"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="android id from jni"/>
+
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

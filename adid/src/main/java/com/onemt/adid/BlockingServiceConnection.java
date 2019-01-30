@@ -3,6 +3,7 @@ package com.onemt.adid;
 import android.content.ComponentName;
 import android.content.ServiceConnection;
 import android.os.IBinder;
+import android.util.Log;
 import com.google.android.gms.common.annotation.KeepForSdk;
 import com.google.android.gms.common.internal.Preconditions;
 
@@ -29,6 +30,7 @@ public class BlockingServiceConnection implements ServiceConnection {
     @Override
     public void onServiceConnected(ComponentName var1, IBinder binder) {
         // 拿到google ad Service的binder
+        Log.e("onServiceConnected", "onServiceConnected");
         this.queue.add(binder);
     }
 
@@ -38,13 +40,13 @@ public class BlockingServiceConnection implements ServiceConnection {
 
     @KeepForSdk
     public IBinder getServiceWithTimeout(long timeout, TimeUnit timeUnit) throws InterruptedException, TimeoutException {
-        Preconditions.checkNotMainThread("BlockingServiceConnection.getServiceWithTimeout() called on main thread");
+//        Preconditions.checkNotMainThread("BlockingServiceConnection.getServiceWithTimeout() called on main thread");
         if (this.zze) {
             throw new IllegalStateException("Cannot call get on this connection more than once");
         } else {
             this.zze = true;
             IBinder var4;
-            if ((var4 = (IBinder)this.queue.poll(timeout, timeUnit)) == null) {
+            if ((var4 = (IBinder)this.queue.take()) == null) {
                 throw new TimeoutException("Timed out waiting for the service connection");
             } else {
                 return var4;
@@ -54,7 +56,7 @@ public class BlockingServiceConnection implements ServiceConnection {
 
     @KeepForSdk
     public IBinder getService() throws InterruptedException {
-        Preconditions.checkNotMainThread("BlockingServiceConnection.getService() called on main thread");
+//        Preconditions.checkNotMainThread("BlockingServiceConnection.getService() called on main thread");
         if (this.zze) {
             throw new IllegalStateException("Cannot call get on this connection more than once");
         } else {
